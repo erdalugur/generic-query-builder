@@ -1,6 +1,6 @@
 {
   "name": "generic-query-builder-client",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "lib",
   "repository": {
@@ -12,7 +12,7 @@
   },
   "homepage": "https://github.com/erdalugur/generic-query-builder",
   "scripts": {
-    "build": "build",
+    "build": "tsc",
     "dev": "nodemon"
   },
   "keywords": [],

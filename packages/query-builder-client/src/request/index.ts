@@ -8,7 +8,8 @@ const headers: any = {
 function createFetcher <T>(endpoint: string, params: any = {}) {
   return fetch(endpoint, {
     headers: headers,
-    method: 'POST'
+    method: 'POST',
+    body: JSON.stringify(params)
   }).then(x => x.json() as Promise<T>)
 }
 
@@ -19,23 +20,23 @@ export class Request {
     this._endpoint = endpoint;
   }
 
-  Create <T>(collection: string, params: Partial<GenericQueryBuilderCreateCommand> = {}): Promise<T> {
+  Create <T>(collection: string, params?: Partial<GenericQueryBuilderCreateCommand>): Promise<T> {
     return createFetcher<T>(`${this._endpoint}/create/${collection}`, params)
   }
   
-  Read <T>(collection: string, params: Partial<GenericQueryBuilderReadCommand> = {}): Promise<T> {
+  Read <T>(collection: string, params?: Partial<GenericQueryBuilderReadCommand>): Promise<T> {
     return createFetcher<T>(`${this._endpoint}/read/${collection}`, params) 
   }
 
-  Update <T>(collection: string, params: Partial<GenericQueryBuilderUpdateCommand> = {}): Promise<T> {
+  Update <T>(collection: string, params?: Partial<GenericQueryBuilderUpdateCommand>): Promise<T> {
     return createFetcher<T>(`${this._endpoint}/update/${collection}`, params)
   }
 
-  Upsert <T>(collection: string, params: Partial<GenericQueryBuilderUpdateCommand> = {}): Promise<T> {
+  Upsert <T>(collection: string, params?: Partial<GenericQueryBuilderUpdateCommand>): Promise<T> {
     return createFetcher<T>(`${this._endpoint}/upsert/${collection}`, params) 
   }
 
-  Delete <T>(collection: string, params: Partial<GenericQueryBuilderDeleteCommand> = {}): Promise<T> {
+  Delete <T>(collection: string, params?: Partial<GenericQueryBuilderDeleteCommand>): Promise<T> {
     return createFetcher<T>(`${this._endpoint}/delete/${collection}`, params) 
   }
 }
