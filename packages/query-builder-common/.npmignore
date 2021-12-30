@@ -1,0 +1,6 @@
+node_modules
+src
+yarn.lock
+.env
+nodemon.json
+tsconfig.json

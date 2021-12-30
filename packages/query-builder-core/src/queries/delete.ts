@@ -1,5 +1,6 @@
 import { SQL_CONSTANTS } from "../constants";
-import { BaseQuery, QueryResponse, GenericQueryBuilderDeleteCommand, GenericQueryBuilderWhere, MiddlewareConfig } from "../models";
+import { BaseQuery, QueryResponse, MiddlewareConfig } from "../models";
+import { GenericQueryBuilderDeleteCommand, GenericQueryBuilderWhere } from "generic-query-builder-common";
 
 export class DeleteQuery implements BaseQuery<GenericQueryBuilderDeleteCommand> {
   _collection: string;

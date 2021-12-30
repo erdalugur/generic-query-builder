@@ -1,5 +1,6 @@
 import { SQL_CONSTANTS } from "../constants";
-import { QueryResponse, BaseQuery, GenericQueryBuilderCreateCommand, MiddlewareConfig } from "../models";
+import { QueryResponse, BaseQuery, MiddlewareConfig } from "../models";
+import { GenericQueryBuilderCreateCommand } from "generic-query-builder-common";
 
 export class CreateQuery implements BaseQuery<GenericQueryBuilderCreateCommand> {
   _collection: string;

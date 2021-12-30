@@ -1,0 +1,30 @@
+{
+  "name": "generic-query-builder-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erdalugur/generic-query-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erdalugur/generic-query-builder/issues"
+  },
+  "homepage": "https://github.com/erdalugur/generic-query-builder",
+  "scripts": {
+    "build": "build",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "Uğur Erdal",
+  "license": "ISC",
+  "dependencies": {
+    "generic-query-builder-common": "^1.0.1",
+    "isomorphic-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/isomorphic-fetch": "^0.0.35",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0"
+  }
+}

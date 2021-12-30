@@ -1,5 +1,6 @@
 import { SQL_CONSTANTS } from "../constants";
-import type { BaseQuery, QueryResponse, GenericQueryBuilderReadCommand,GenericQueryBuilderDistinct, GenericQueryBuilderWhere, MiddlewareConfig, GenericQueryBuilderSelectColumn } from "../models"
+import type { BaseQuery, QueryResponse, MiddlewareConfig  } from "../models"
+import { GenericQueryBuilderReadCommand, GenericQueryBuilderWhere, GenericQueryBuilderDistinct, GenericQueryBuilderSelectColumn } from "generic-query-builder-common";
 
 export class ReadQuery implements BaseQuery<GenericQueryBuilderReadCommand> {
   _collection: string;

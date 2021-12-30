@@ -1,0 +1,20 @@
+{
+  "name": "generic-query-builder-common",
+  "version": "1.0.1",
+  "description": "",
+  "main": "lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erdalugur/generic-query-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erdalugur/generic-query-builder/issues"
+  },
+  "homepage": "https://github.com/erdalugur/generic-query-builder",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Uğur Erdal",
+  "license": "ISC"
+}
