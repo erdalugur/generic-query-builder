@@ -1,6 +1,6 @@
 {
   "name": "generic-query-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A node module generic query builder for postgresql",
   "main": "lib",
   "scripts": {
