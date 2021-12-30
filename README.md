@@ -25,8 +25,7 @@ npm install generic-query-builder
 
 // step 2: include project
 import express from 'express'
-import { useQueryMiddleware } from 'generic-query-builder'
-import { ErrorFn, SuccessFn } from 'generic-query-builder/lib/models'
+import { useQueryMiddleware, ErrorFn, SuccessFn } from 'generic-query-builder'
 
 const app = express()
 
