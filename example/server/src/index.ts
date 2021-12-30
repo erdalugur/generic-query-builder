@@ -1,8 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
-
-import { useQueryMiddleware } from 'generic-query-builder'
-import { ErrorFn, SuccessFn } from 'generic-query-builder/lib/models'
+import { useQueryMiddleware, ErrorFn, SuccessFn } from 'generic-query-builder'
 
 dotenv.config()
 

@@ -11,13 +11,8 @@ export type BaseQuery<T> = {
 export interface MiddlewareConfig {
   itemsPerRequest?: number
   dbConfig: PoolConfig
-  onBeforeExecute?(v: BeforeExecute): void
   onError: ErrorFn
   onSuccess: SuccessFn
-}
-interface BeforeExecute {
-  collection: string
-  action: 'create' | 'read' | 'update' | 'delete'
 }
 
 export type ErrorFn = (err: { message: string }, req: Request, res: Response, next: NextFunction) => void

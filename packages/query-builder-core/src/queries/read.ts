@@ -78,7 +78,7 @@ export class ReadQuery implements BaseQuery<GenericQueryBuilderReadCommand> {
       }
       items.forEach(x => {
         if (typeof(x) === 'object') {
-          query.push(`${collection}.${x.Column} as ${x.Alias}`)
+          query.push(`${collection}.${x.Column} as "${x.Alias}"`)
         }else {
           query.push(`${collection}.${x}`)
         }
