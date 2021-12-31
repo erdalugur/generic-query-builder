@@ -44,14 +44,14 @@ const errorFn: ErrorFn = (err, req, res, next) => {
   res.json(err)
 }
 
-const succesFn: SuccessFn = (data, req, res, next) => {
+const successFn: SuccessFn = (data, req, res, next) => {
   res.json(data)
 }
 
 const genericQueryBuilderMiddleware = useQueryMiddleware({
   itemsPerRequest: 1000,
   dbConfig: db,
-  onSuccess: succesFn,
+  onSuccess: successFn,
   onError: errorFn
 })
 

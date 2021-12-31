@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import { PoolConfig } from 'pg'
+import { PoolConfig, QueryResult } from 'pg'
 
 export type QueryResponse = { query: string, parameters: any[]}
 
@@ -15,5 +15,12 @@ export interface MiddlewareConfig {
   onSuccess: SuccessFn
 }
 
-export type ErrorFn = (err: { message: string }, req: Request, res: Response, next: NextFunction) => void
-export type SuccessFn = (result: { rows: any[], query: string}, req: Request, res: Response, next: NextFunction) => void
+export type ErrorFn = (err: GenericQueryBuilderErrorResult, req: Request, res: Response, next: NextFunction) => void
+export type SuccessFn = (result: GenericQueryBuilderResult<any>, req: Request, res: Response, next: NextFunction) => void
+
+export interface GenericQueryBuilderErrorResult {
+  message: string
+}
+export interface GenericQueryBuilderResult<T> extends QueryResult<T> {
+  query: string
+}

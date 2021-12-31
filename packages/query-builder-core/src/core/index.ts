@@ -1,42 +1,44 @@
 import { Pool, PoolConfig } from 'pg'
 import { NextFunction, Response } from 'express'
-import { MiddlewareConfig } from '../models'
+import { MiddlewareConfig, BaseQuery, GenericQueryBuilderResult } from '../models'
 import { queryMap } from '../queries'
 
 let _pool: Pool
 
 function getInstance (config: PoolConfig | undefined) {
-  if (_pool) {
-    return _pool
+  if (!_pool) {
+    _pool = new Pool(config)
   }
-  _pool = new Pool(config)
   return _pool
 }
 
-export async function executeQuery (config: any, query: string, parameters: any[]): Promise<any[]> {
+export const createQueryInstance = (config: PoolConfig) => {
   const instance = getInstance(config)
-  return new Promise((resolve, reject) => {
-    instance.connect((err: any, client, release) => {
-      if (err) {
-        reject(err) 
-      } else {
-        client.query(query, parameters, (err: any, result) => {
-          release()
-          if (err) {
-            reject(err) 
-          }else {
-            return resolve(result.rows)
-          }
-        })
-      }
-    })
-  })
-}
 
+  return async <T>(query: string, parameters: any []): Promise<GenericQueryBuilderResult<T>> => {
+    return new Promise((resolve, reject) => {
+      instance.connect((err: any, client, release) => {
+        if (err) {
+          reject(err) 
+        } else {
+          client.query(query, parameters, (err: any, result) => {
+            release()
+            if (err) {
+              reject(err) 
+            }else {
+              return resolve({...result, query })
+            }
+          })
+        }
+      })
+    })
+  }
+}
 
 
 export function useQueryMiddleware (params: MiddlewareConfig) {
   params.dbConfig.ssl = typeof(params.dbConfig.ssl) !== 'undefined' ? params.dbConfig.ssl : false
+  const executeQuery = createQueryInstance(params.dbConfig)
   return async (req: any, res: Response, next: NextFunction) => {
     const { action, collection } = req.params as { collection: string, action: string }
     if (!queryMap[action]) {
@@ -44,12 +46,12 @@ export function useQueryMiddleware (params: MiddlewareConfig) {
       return
     }
 
-    const fn = new queryMap[action](collection, req.body, params)
+    const fn = new queryMap[action](collection, req.body, params) as BaseQuery<unknown>
     
-    const { query, parameters } = await fn.toQuery() as { query: string, parameters: Record<string, any>[]}
+    const { query, parameters } = await fn.toQuery() 
     
-    executeQuery(params.dbConfig, query, parameters).then(data => {
-      params.onSuccess({ rows: data, query }, req, res, next)
+    executeQuery<any>(query, parameters).then((result) => {
+      params.onSuccess(result, req, res, next)
     }).catch(er => {
       params.onError({ message: er.message },req, res, next)
     })
