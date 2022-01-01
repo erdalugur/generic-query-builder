@@ -537,27 +537,14 @@ generic-query-builder-common@^1.0.1:
   resolved "https://registry.yarnpkg.com/generic-query-builder-common/-/generic-query-builder-common-1.0.1.tgz#4d0af7c90a5d8d60347aebe9462381bcc6d5f186"
   integrity sha512-UBsiejSEmt3eUoyZTfUwY4gRFV1D0Z18D82Qyt+/dVa5JKkatdkYve5F8fgfUR7U+n8f8xVeZTX3ortwo/V6lg==
 
-generic-query-builder@^1.0.0, generic-query-builder@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/generic-query-builder/-/generic-query-builder-1.0.1.tgz#22225bcc59b8a6d614d76a7705fc2ea1ee713de0"
-  integrity sha512-m0kw9da0oU8pA48v2Hq2N4pSWb4tqOirFfCTgql9Qx/3pBy/4kuBgGrEr8hUzkSQWDk/Kg+UXa5NqrPclE9big==
+generic-query-builder@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/generic-query-builder/-/generic-query-builder-1.0.3.tgz#d82268b2414ff444fe52cde1aeb6c51f93f2124b"
+  integrity sha512-2dAqeoqZ2GK+AOElzLexHCy+vVCkG1JoS5bifqELbK64/ka1ZIdkcEDiJZUB7QYQernisggCTXjtNKHvGZ2z7g==
   dependencies:
     "@types/express" "^4.17.13"
     "@types/pg" "^8.6.3"
     express "^4.17.2"
-    generic-query-builder "^1.0.0"
-    pg "^8.7.1"
-    typescript "^4.5.4"
-
-generic-query-builder@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/generic-query-builder/-/generic-query-builder-1.0.2.tgz#321bb13a2c880d59a7c464844131997e64b1fd30"
-  integrity sha512-+7pFQss5cuER2L4PMl/yyfsDuoXek1nBvSNXcDzODXq1Jh4O0w5QzyQwVTT0LcdCv7l1OSWnvx61/GhseUKOFg==
-  dependencies:
-    "@types/express" "^4.17.13"
-    "@types/pg" "^8.6.3"
-    express "^4.17.2"
-    generic-query-builder "^1.0.1"
     generic-query-builder-common "^1.0.1"
     pg "^8.7.1"
     typescript "^4.5.4"

@@ -28,7 +28,7 @@ export class Request {
     return createFetcher<T>(`${this._endpoint}/read/${collection}`, params) 
   }
 
-  Update <T>(collection: string, params: Partial<GenericQueryBuilderUpdateCommand>) {
+  Update <T>(collection: string, params: GenericQueryBuilderUpdateCommand) {
     return createFetcher<T>(`${this._endpoint}/update/${collection}`, params)
   }
 
@@ -39,8 +39,4 @@ export class Request {
   Delete <T>(collection: string, params: GenericQueryBuilderDeleteCommand) {
     return createFetcher<T>(`${this._endpoint}/delete/${collection}`, params) 
   }
-}
-
-export function createInstance (endpoint: string) {
-  return new Request(endpoint)
 }

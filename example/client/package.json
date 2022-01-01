@@ -10,7 +10,7 @@
   "author": "Uğur Erdal",
   "license": "ISC",
   "dependencies": {
-    "generic-query-builder-client": "^1.0.2",
+    "generic-query-builder-client": "^1.0.3",
     "generic-query-builder-common": "^1.0.1"
   },
   "devDependencies": {

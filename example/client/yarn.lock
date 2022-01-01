@@ -299,10 +299,10 @@ fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
-generic-query-builder-client@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/generic-query-builder-client/-/generic-query-builder-client-1.0.2.tgz#53d1ccddd749e5e3521678933ac5a28f90773f3c"
-  integrity sha512-WX0lNhKeWMdzbfy4QaARpD7KLo2eMdkJeh/juVPkRag+EqumtQya/bKgkETOHFcWMnYqQUjCwZ4WuUNQI2b2bA==
+generic-query-builder-client@^1.0.3:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/generic-query-builder-client/-/generic-query-builder-client-1.0.4.tgz#da351da7ad3c8fc1bcef24d55651203016131af9"
+  integrity sha512-ITydbQB14nhZsKMuEd0SqU0tRUznWIqBSxM39R25MEW2fmtz+ELKqbyzK4k0lQbiQMKTs8PeUDc4gC0G6T29lA==
   dependencies:
     generic-query-builder-common "^1.0.1"
     isomorphic-fetch "^3.0.0"
